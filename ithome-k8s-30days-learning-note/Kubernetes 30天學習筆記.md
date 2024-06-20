@@ -380,7 +380,7 @@
 
       - <https://stackoverflow.com/a/67161567>
 
-         ![image 1.png](image 1.png)
+         ![image1.png](image1.png)
 
          ```yaml
          kubectl create -f first-service.yaml
