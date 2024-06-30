@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kuard-manifest
+spec:
+  containers:
+    - name: kuard-from-manifest
+      image: gcr.io/kuar-demo/kuard-arm64:blue
+      imagePullPolicy: Always
+      ports:
+        - containerPort: 8080
+          protocol: TCP
+      livenessProbe:
+        httpGet:
+          port: 8080
+          path: /healthy
+        initialDelaySeconds: 5
+        timeoutSeconds: 1
+        periodSeconds: 10
+        failureThreshold: 3
+  
